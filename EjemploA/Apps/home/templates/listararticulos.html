@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<title>Crear Estudiantes</title>
+
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">LISTAR ARTICULOS</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Pagina de listado de Articulos del sitio web</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- About-->
+    <section class="about-section text-center" id="about">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="signup-section" id="signup">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-10 col-lg-8 mx-auto text-center">
+                    <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                    
+                    <h2 class="text-white mb-5">Listado de Articulosen el sitio web</h2>
+
+                    <form class="form-signup" id="contactForm" data-sb-form-api-token="API_TOKEN" action="" method="GET">
+                        <div class="row input-group-newsletter">
+                            <div class="col">
+                                <input class="form-control" id="emailAddress" type="text" name="nombre" value="{{request.GET.nombre}}" placeholder="ingresar nombre...">
+                            </div>
+                            <div class="col-auto">
+                                <button class="btn btn-primary" id="submitButton" type="submit">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                    <hr>
+
+                    <caption>Listado de Articulos en el sitio web</caption>
+                    <table class="table" style="color:#FFFFFF">
+                        <thead>
+                            <tr>
+                                <td class="col-4 themed-grid-col">Nombre</td>
+                                <td class="col-4 themed-grid-col">Descripcion</td>
+                                <td class="col-4 themed-grid-col">Accion</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for est in object_list %}
+                            <tr>
+                                <td>
+                                    {{ est.nombre }}
+                                </td>
+                                <td>
+                                    {{ est.descripcion }}
+                                </td>
+                                <td>
+                                    <a href="{% url 'home:editararticulosapp' est.id %}" >Editar</a>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                        <tfoot>
+
+                        </tfoot>
+                        
+                    </table>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

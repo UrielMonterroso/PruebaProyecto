@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<title>Estudiantes</title>
+
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">ESTUDIANTES</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Pagina de tabla de Estudiantes del sitio web</h2>
+                    <a class="btn btn-primary" href="#about">Aceptar</a>
+                    <a class="btn btn-primary" href={% url 'home:crearestudiantesapp' %}>Agregar Estudiantes</a>
+                    <a class="btn btn-primary" href={% url 'home:crearestudianteautsapp' %}>Agregar Estudiantes Auts</a>
+                    <a class="btn btn-primary" href="#about">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- About-->
+    <section class="about-section text-center" id="about">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-lg-8">
+                    <h2 class="text-white mb-4">Tabla de Estudiantes</h2>
+                    
+                </div>
+            </div>
+            <img class="img-fluid" src="assets/img/ipad.png" alt="..." />
+        </div>
+    </section>
+  
+    <table class="table">
+        <tr>
+            <td class="col-2 themed-grid-col">Id</td>
+            <td class="col-4 themed-grid-col">Nombre</td>
+            <td class="col-4 themed-grid-col">Apellido</td>
+            <td class="col-3 themed-grid-col">Telefono</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Juan</td>
+            <td>Garcia</td>
+            <td>47563976</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Carlos</td>
+            <td>Santana</td>
+            <td>66483845</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Ana</td>
+            <td>Lopez</td>
+            <td>59376790</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Cameron</td>
+            <td>Cuevas</td>
+            <td>12039485</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Steve</td>
+            <td>Gomez</td>
+            <td>93222845</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Hank</td>
+            <td>Schrader</td>
+            <td>99948373</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Saul</td>
+            <td>Goodman</td>
+            <td>58672227</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Carmen</td>
+            <td>Flores</td>
+            <td>34933273</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Rosa</td>
+            <td>Diaz</td>
+            <td>94826465</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>Terrance</td>
+            <td>Jeffords</td>
+            <td>32272737</td>
+        </tr>
+    </table>
+
+{% endblock %}
